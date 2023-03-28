@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import Comp1 from './components/Comp1'
-import { Button } from 'antd';
-import { UpOutlined } from "@ant-design/icons"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,8 +7,7 @@ function App() {
   return (
     <div className="App">
       顶级组件
-      <Button type="primary">按钮</Button>
-      <UpOutlined style={{fontSize:'40px', color:'red'}}/>
+      <Comp1></Comp1>
     </div>
   )
 }

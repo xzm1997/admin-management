@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       顶级组件
       <Button type="primary">按钮</Button>
-      <UpOutlined style={{fontSize:'40px', color:'red'}}/>
+      <UpOutlined />
     </div>
   )
 }
