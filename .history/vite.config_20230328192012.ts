@@ -11,7 +11,7 @@ export default defineConfig({
       resolves: [
         AntdResolve()
       ]
-    })
+})
   ],
   resolve: {
     alias: {

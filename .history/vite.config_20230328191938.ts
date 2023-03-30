@@ -7,11 +7,11 @@ import styleImport, { AntdResolve } from 'vite-plugin-style-import'
 export default defineConfig({
   plugins: [
     react(),
-    styleImport({
-      resolves: [
+    styleImport([
+      resolve: [
         AntdResolve()
       ]
-    })
+    ])
   ],
   resolve: {
     alias: {
