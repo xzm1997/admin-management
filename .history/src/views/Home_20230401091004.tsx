@@ -68,4 +68,4 @@ const View: React.FC = () => {
   );
 };
 
-export default View;
+export default App;
