@@ -30,7 +30,10 @@ const routes = [
   }, 
   {
     path: "/user",
-    element: withLoadingComponent(<User />)
+    element: 
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <User />
+      </React.Suspense>
   }
 ]
 

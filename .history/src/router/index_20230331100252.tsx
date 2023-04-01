@@ -26,11 +26,15 @@ const routes = [
   }, 
   {
     path: "/about",
-    element: withLoadingComponent(<About />)
+    element: 
+      
   }, 
   {
     path: "/user",
-    element: withLoadingComponent(<User />)
+    element: 
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <User />
+      </React.Suspense>
   }
 ]
 
