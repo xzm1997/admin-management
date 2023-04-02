@@ -60,7 +60,7 @@ const View: React.FC = () => {
           </Breadcrumb>
         </Header>
         <Content style={{ margin: '16px 16px 0' }}>
-          <div style={{ padding: 24, minHeight: 480, background: colorBgContainer }}>
+          <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
             Bill is a cat.
           </div>
         </Content>

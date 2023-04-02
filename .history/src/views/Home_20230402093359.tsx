@@ -53,18 +53,18 @@ const View: React.FC = () => {
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
       <Layout className="site-layout">
-        <Header style={{ paddingLeft: '16px', background: colorBgContainer }}>
-          <Breadcrumb style={{ lineHeight:'64px' }}>
+        <Header style={{ padding: 0, background: colorBgContainer }}>
+          <Breadcrumb style={{ margin: '16px 0' }}>
             <Breadcrumb.Item>User</Breadcrumb.Item>
             <Breadcrumb.Item>Bill</Breadcrumb.Item>
           </Breadcrumb>
         </Header>
-        <Content style={{ margin: '16px 16px 0' }}>
-          <div style={{ padding: 24, minHeight: 480, background: colorBgContainer }}>
+        <Content style={{ margin: '16px 16px' }}>
+          <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
             Bill is a cat.
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center', padding:0, lineHeight:'48px' }}>Ant Design ©2023 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
       </Layout>
     </Layout>
   );
