@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -28,8 +29,8 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('Option 1', '/page1', <PieChartOutlined />),
+  getItem('Option 2', '/page2', <DesktopOutlined />),
   getItem('User', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),
     getItem('Bill', '4'),
@@ -41,16 +42,22 @@ const items: MenuItem[] = [
 
 const View: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const navigateTo = useNavigate()
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  const menuClick = (e: {key:string}) => {
+    console.log("Click: ", e.key)
+    // todo: 点击跳转对应路由: 编程式导航 HOOK
+    navigateTo(e.key)
+  }
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
       {/* 左侧边栏 */}
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={menuClick}/>
       </Sider>
       <Layout className="site-layout">
         <Header style={{ paddingLeft: '16px', background: colorBgContainer }}>
@@ -61,7 +68,9 @@ const View: React.FC = () => {
         </Header>
         <Content style={{ margin: '16px 16px 0' }}>
           <div style={{ padding: 24, minHeight: 480, background: colorBgContainer }}>
-            Bill is a cat.
+            {/* 窗口部分 */}
+            {/* Outlet为旧版写法，应使用useRoutes进行识别 */}
+            <Outlet />
           </div>
         </Content>
         <Footer style={{ textAlign: 'center', padding:0, lineHeight:'48px' }}>Ant Design ©2023 Created by Ant UED</Footer>
