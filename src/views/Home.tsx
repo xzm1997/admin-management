@@ -18,8 +18,8 @@ const View: React.FC = () => {
     <Layout style={{ minHeight: '100vh' }}>
       {/* 左侧边栏 */}
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <MainMenu></MainMenu>
         <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
+        <MainMenu></MainMenu>
       </Sider>
       <Layout className="site-layout">
         <Header style={{ paddingLeft: '16px', background: colorBgContainer }}>

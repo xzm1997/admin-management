@@ -1,7 +1,7 @@
 const View = () => {
   return(
     <div className="home">
-      <p>About 组件</p>
+      <p>Page301 组件</p>
     </div>
   )
 }
